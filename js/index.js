@@ -101,7 +101,7 @@
     // 中间省略的数据  准备三项
     var item = {
         name: '',
-        value: 1200,
+        value: 0,
         // 柱子颜色
         itemStyle: {
             color: '#254065'
