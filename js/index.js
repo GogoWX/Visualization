@@ -232,7 +232,7 @@ function changeD() {
 
 //园区亮点展示
 (function () {
-    var mySwiper = new Swiper('.swiper-container', {
+    var mySwiper = new Swiper('#swiper1', {
         autoplay: 3000, //可选选项，自动滑动
         autoplayDisableOnInteraction: false,
         // loop: true,
@@ -241,13 +241,30 @@ function changeD() {
             $('#swiper-p1 p').removeClass('swiper-p1-act')
             $('#swiper-p1 p').eq(swiper.activeIndex).addClass("swiper-p1-act")
         },
-        // loopAdditionalSlides: 0,
     })
     $("#swiper-p1").on("click","p",function(){
         let index = $(this).index();
+        console.log(index)
         mySwiper.slideTo(index);
     })
 
+})();
+
+//项目介绍
+(function () {
+    for(let i = 0;i<5;i++) {
+        let s1 = `<div class="swiper-slide">slider${i}</div>`;
+        $('#swiper2 .swiper-wrapper').append(s1)
+    }
+
+    var mySwiper2 = new Swiper('#swiper2', {
+        autoplay: 3000, //可选选项，自动滑动
+        autoplayDisableOnInteraction: false,
+        // loop: true,
+        onSlideChangeStart: function (swiper) {
+            console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+        },
+    })
 })();
 
 
