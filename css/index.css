@@ -89,7 +89,7 @@ a {
 
 .overview span {
   font-size: 0.667rem;
-  color: #4c9bfd;
+  color: #68d8fe;
 }
 
 /* 监控 */
@@ -212,13 +212,38 @@ a {
 
 .object .head2 {
   background: rgba(255, 255, 255, 0.1);
-  font-size: 0.583rem;
+  font-size: 0.833rem;
   padding: 0.5rem 1.5rem;
   color: #68d8fe;
   line-height: 1.05;
   text-align: center;
 }
 
+.object-num {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.583rem;
+}
+
+.object-num > div {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 0.583rem;
+}
+.object-num p {
+  color: #68d8fe;
+  margin-right: 0.5rem;
+}
+.object-text {
+  margin-top: 1rem;
+  color: #68d8fe;
+  line-height: 1.5;
+  letter-spacing: 0.08rem;
+}
 /* ------------------------------------------------------------动画 */
 @keyframes row {
   0% {}
@@ -575,6 +600,7 @@ a {
 .swiper-container {
   width: 100%;
   margin: 1rem auto;
+  color: white;
 }
 
 .swiper-container .swiper-slide {
