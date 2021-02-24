@@ -31,6 +31,7 @@ a {
   background: url(../images/logo.png) no-repeat 0 0 / contain;
   display: flex;
   padding: 3.667rem 0.833rem 0;
+  box-sizing: border-box;
 }
 
 .column {
@@ -50,7 +51,6 @@ a {
   border-image: url(../images/border.png) 51 38 21 132;
   border-width: 2.125rem 1.583rem 0.875rem 5.5rem;
   position: relative;
-  margin-bottom: 0.833rem;
 }
 
 .panel .inner {
@@ -72,6 +72,11 @@ a {
 /* 概览区域 */
 .overview {
   height: 4.583rem;
+  margin-bottom: 0.833rem;
+}
+
+.users-info {
+  margin-bottom: 0.853rem;
 }
 
 .overview .inner {
@@ -200,7 +205,7 @@ a {
 }
 
 .object {
-  height: 30rem;
+  height: 31rem;
 
 }
 
@@ -243,6 +248,30 @@ a {
   color: #68d8fe;
   line-height: 1.5;
   letter-spacing: 0.08rem;
+}
+.tag-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 99; */
+}
+.tag-box a {
+  width: 50%;
+  height: 3rem;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 3rem;
+  color: rgb(118, 124, 132);
+  background-color: rgb(10, 62, 115);
+  border-radius: 0.8rem 0.8rem 0 0; 
+  box-sizing: border-box;
+}
+
+.tag-checked {
+  border: 1px solid #fff;
 }
 /* ------------------------------------------------------------动画 */
 @keyframes row {
@@ -306,7 +335,7 @@ a {
 
 /* 地图  */
 .map {
-  height: 25rem;
+  height: 25.5rem;
   margin-bottom: 0.833rem;
   display: flex;
   flex-direction: column;
@@ -594,12 +623,13 @@ a {
 }
 
 .top {
-  height: 20rem;
+  height: 21rem;
+  margin-bottom: 2rem;
 }
 
 .swiper-container {
   width: 100%;
-  margin: 1rem auto;
+  margin: 0 auto;
   color: white;
 }
 
@@ -608,12 +638,17 @@ a {
   height: 13rem;
 }
 
+.swiper-wrapper {
+  margin: 1rem auto;
+}
+
 #swiper-p1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 3rem;
+  margin-top: 0.5rem;
 }
 
 #swiper-p1 p {
