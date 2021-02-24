@@ -8,7 +8,7 @@
         var width = html.clientWidth;
 
         // 判断
-        if (width < 1024) width = 1024
+        // if (width < 1024) width = 1024
         if (width > 1920) width = 1920
         // 设置html的基准值
         var fontSize = width / 80 + 'px';
