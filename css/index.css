@@ -130,7 +130,6 @@ a {
 
 .monitor .content1 {
   flex: 1;
-  display: none;
   position: relative;
 }
 
@@ -386,6 +385,10 @@ a {
   justify-content: space-between;
   align-items: center;
   color: white;
+}
+
+select {
+  font-size: 0.667rem;
 }
 
 .users .data {
