@@ -77,9 +77,21 @@ function changeC() {
     let datew = ddd.getFullYear() + "-" + month + "-" + day;
     datew = datew.toString();
     $("#udate").val(datew)
+    $("#sdate").val(datew)
+    $("#edate").val(datew)
 })();
 
 function changeD() {
     let chooseD = $('#udate').val();
+    console.log(chooseD)
+}
+
+function changeS() {
+    let chooseD = $('#sdate').val();
+    console.log(chooseD)
+}
+
+function changeE() {
+    let chooseD = $('#edate').val();
     console.log(chooseD)
 }

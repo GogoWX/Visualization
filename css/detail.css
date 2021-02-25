@@ -8,21 +8,23 @@
     padding: 1rem;
 }
 
-.monitor .info-content,.monitor .count-box {
+.monitor .info-content,
+.monitor .count-box {
     position: relative;
     width: 100%;
-    height: 7rem;
+    height: 8.5rem;
     margin: 0.5rem auto;
     border: 1px solid #68d8fe;
 }
 
 .monitor .marquee-view {
     top: 2rem;
-    height: 4.5rem;
+    height: 6rem;
     box-sizing: border-box;
 }
 
-#ctotal,#utotal {
+#ctotal,
+#utotal {
     color: #fff;
 }
 
@@ -31,36 +33,70 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  
-  .monitor .col:nth-child(2) {
+}
+
+.monitor .col:nth-child(2) {
     width: 5rem;
     /* 不换行  一行省略*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  
-  .monitor .col:nth-child(3) {
+}
+
+.monitor .col:nth-child(3) {
     width: 5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
+}
 
-  .white {
-      color: white;
-  }
+.white {
+    color: white;
+}
 
-  .count-box .users-h {
-      padding: 0.5rem;
-      font-size: 0.583rem;
-  }
+.count-box .users-h {
+    padding: 0.5rem;
+    font-size: 0.583rem;
+}
 
-  .count-box .users-h h3 {
-      font-size: 0.667rem;
-  }
+.count-box .users-h h3 {
+    font-size: 0.667rem;
+}
 
-  input {
+input {
     font-size: 0.5rem;
-  }
+}
+
+.flex-r {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.monitor .record-box {
+    height: 12rem;
+}
+
+.record-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.record-content .row {
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.record-content .row span {
+    height: 3rem;
+    line-height: 2.5rem;
+    
+}
+
+.record-content .row p:nth-child(1) {
+    line-height: 1.5rem;
+}
