@@ -100,3 +100,12 @@ input {
 .record-content .row p:nth-child(1) {
     line-height: 1.5rem;
 }
+
+.intro-box {
+    height: 19rem;
+}
+
+.map .chart {
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
