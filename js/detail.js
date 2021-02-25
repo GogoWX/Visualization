@@ -35,7 +35,7 @@
 })();
 
 
-function changeD() {
+function changeC() {
     let chooseD = $('#company').val();
     console.log(chooseD)
 }
@@ -62,3 +62,24 @@ function changeD() {
     });
 
 })();
+
+//统计日期设置及选择
+(function () {
+    let ddd = new Date();
+    let day = ddd.getDate();
+    let month = ddd.getMonth() + 1;
+    if (ddd.getMonth() < 10) {
+         month = "0" + (ddd.getMonth() + 1);
+    }
+    if (ddd.getDate() < 10) {
+        day = "0" + ddd.getDate();
+    }
+    let datew = ddd.getFullYear() + "-" + month + "-" + day;
+    datew = datew.toString();
+    $("#udate").val(datew)
+})();
+
+function changeD() {
+    let chooseD = $('#udate').val();
+    console.log(chooseD)
+}
