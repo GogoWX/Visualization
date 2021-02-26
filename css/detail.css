@@ -144,24 +144,39 @@ input {
     font-size: 0.667rem;
 }
 
+.arrow-box {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #service-n {
-    top: 90%;
-    right: 5%;
+    position: static;
     width: 1rem;
     height: 1rem;
+    margin: 0;
+    background-image: url('../images/youjiantou.png');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 #service-p {
-    top: 90%;
-    left: 80%;
+    position: static;
     width: 1rem;
+    margin: 0;
     height: 1rem;
+    background-image: url('../images/zuojiantou.png');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 #service-f {
-    width: 8%;
+    position: static;
+    width: 4rem;
     text-align: center;
     font-size: 0.667rem;
-    left: 84%;
-    bottom: 10%;
 }
