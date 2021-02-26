@@ -69,7 +69,7 @@ function changeC() {
     let day = ddd.getDate();
     let month = ddd.getMonth() + 1;
     if (ddd.getMonth() < 10) {
-         month = "0" + (ddd.getMonth() + 1);
+        month = "0" + (ddd.getMonth() + 1);
     }
     if (ddd.getDate() < 10) {
         day = "0" + ddd.getDate();
@@ -95,3 +95,20 @@ function changeE() {
     let chooseD = $('#edate').val();
     console.log(chooseD)
 }
+
+(function () {
+    var mySwiper = new Swiper('#swiper3', {
+        autoplay: 3000, //可选选项，自动滑动
+        autoplayDisableOnInteraction: false,
+        // loop: true,
+        nextButton: '#service-n',
+        prevButton: '#service-p',
+        pagination: '#service-f',
+        paginationType: 'fraction',
+        onSlideChangeStart: function (swiper) {
+            console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+            // $('.service-intro h4').text(swiper.activeIndex)
+            // $('.service-intro p').text(swiper.activeIndex)
+        },
+    })
+})();
