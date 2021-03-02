@@ -290,8 +290,6 @@ function changeD() {
         type: 1
     }]
     introL.map((i, index) => {
-        690
-        560
         let x = parseFloat(i.pos_x) / 690 * 28;
         let y = parseFloat(i.pos_y) / 600 * 23;
         let s1 = `<div class="swiper-slide"><img src='${i.banner}'></div>`;
