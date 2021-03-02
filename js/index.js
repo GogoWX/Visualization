@@ -242,7 +242,7 @@ function changeD() {
             $('#swiper-p1 p').eq(swiper.activeIndex).addClass("swiper-p1-act")
         },
     })
-    $("#swiper-p1").on("click","p",function(){
+    $("#swiper-p1").on("click", "p", function () {
         let index = $(this).index();
         console.log(index)
         mySwiper.slideTo(index);
@@ -252,22 +252,84 @@ function changeD() {
 
 //项目介绍
 (function () {
-    for(let i = 0;i<5;i++) {
-        let s1 = `<div class="swiper-slide">slider${i}</div>`;
+    let introL = [{
+        address: "北京市朝阳区建国路35号",
+        banner: "images/dasha.jpg",
+        lat: "39.90925",
+        lng: "116.521845",
+        pos_x: "420",
+        pos_y: "280",
+        title: "华润时代中心",
+        type: 0
+    }, {
+        address: "昌平区未来科学城路与英才北二街交汇处",
+        banner: "images/dasha1.jpg",
+        lat: "40.137035",
+        lng: "116.473335",
+        pos_x: "335",
+        pos_y: "560",
+        title: "华润置地科创大道",
+        type: 0
+    }, {
+        address: "北京市丰台区福宜街9号院5号楼",
+        banner: "images/dasha2.jpg",
+        lat: "39.512497",
+        lng: "116.413118",
+        pos_x: "280",
+        pos_y: "40",
+        title: "华润置地中心(新机场)",
+        type: 0
+    }, {
+        address: "北京市朝阳区广渠门外大街8号优士阁C座2-3层",
+        banner: "images/dasha2.jpg",
+        lat: "39.8928",
+        lng: "116.459",
+        pos_x: "325",
+        pos_y: "230",
+        title: "润联行·优士阁",
+        type: 1
+    }]
+    introL.map((i, index) => {
+        690
+        560
+        let x = parseFloat(i.pos_x) / 690 * 28;
+        let y = parseFloat(i.pos_y) / 600 * 23;
+        let s1 = `<div class="swiper-slide"><img src='${i.banner}'></div>`;
+        let tag = `<div class="img-tag" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
+        if (index == 0) {
+            tag = `<div class="img-tag choose-img" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
+            if(i.type == 1) {
+                tag = `<div class="img-tag choose-img bgc-blue" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
+            }
+        } else {
+            if(i.type == 1) {
+                tag = `<div class="img-tag bgc-blue" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
+            }
+        }
         $('#swiper2 .swiper-wrapper').append(s1)
-    }
-
+        $('.map-c').eq(0).append(tag)
+        $('#swiper2 .head2').eq(0).text(i.title)
+        $('#swiper2 .object-text').eq(0).text(i.address)
+    })
     var mySwiper2 = new Swiper('#swiper2', {
         autoplay: 3000, //可选选项，自动滑动
         autoplayDisableOnInteraction: false,
         // loop: true,
         onSlideChangeStart: function (swiper) {
             console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+            $('.map-c .img-tag').removeClass('choose-img')
+            $('.map-c .img-tag').eq(swiper.activeIndex).addClass("choose-img")
+            $('#swiper2 .head2').eq(0).text(introL[swiper.activeIndex].title)
+            $('#swiper2 .object-text').eq(0).text(introL[swiper.activeIndex].address)
         },
     })
+    $(".map-c").on("click", "div.img-tag", function () {
+        let index = $(this).index();
+        console.log(index)
+        mySwiper2.slideTo(index);
+    })
+
 })();
-
-
 
 // //订单
 // (function () {

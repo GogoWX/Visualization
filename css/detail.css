@@ -110,8 +110,14 @@ input {
     border-radius: 0.3rem;
 }
 
+.intro-img {
+    width: 30rem;
+    height: 15rem;
+}
+
 .service-box {
     height: 15rem;
+    margin-bottom: 0;
 }
 
 .flex-jc-sb {
@@ -120,10 +126,10 @@ input {
 }
 
 #swiper3 {
-    width: 60%;
+    width: 15rem;
 }
 .service-intro {
-    width: 40%;
+    flex: 1;
     height: 100%;
 }
 
@@ -131,7 +137,8 @@ input {
     margin: 1rem auto 0;
 }
 
-#swiper-w3 .swiper-slide {
+#swiper-w3 .swiper-slide,#swiper-w3 .swiper-slide img{
+    width: 15rem;
     height: 10rem;
 }
 
@@ -179,4 +186,21 @@ input {
     width: 4rem;
     text-align: center;
     font-size: 0.667rem;
+}
+
+.show-box {
+    height: 32.5rem;
+    margin-bottom: 1rem;
+}
+
+#swiper-w4 .swiper-slide {
+    height: 27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#swiper-w4 .swiper-slide img {
+    width: 13rem;
+    height: 26rem;
 }

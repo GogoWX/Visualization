@@ -112,3 +112,20 @@ function changeE() {
         },
     })
 })();
+
+(function () {
+    var mySwiper = new Swiper('#swiper4', {
+        autoplay: 3000, //可选选项，自动滑动
+        autoplayDisableOnInteraction: false,
+        // loop: true,
+        nextButton: '#show-n',
+        prevButton: '#show-p',
+        // pagination: '#show-f',
+        // paginationType: 'fraction',
+        onSlideChangeStart: function (swiper) {
+            console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+            // $('.service-intro h4').text(swiper.activeIndex)
+            // $('.service-intro p').text(swiper.activeIndex)
+        },
+    })
+})();
