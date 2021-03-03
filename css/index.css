@@ -706,11 +706,15 @@ select {
 .swiper-container .swiper-slide {
   width: 100%;
   height: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.swiper-container .swiper-slide img {
-  width: 21rem;
-  height: 14rem;
+.swiper-container .swiper-slide img,#swiper1 video,#swiper1 img {
+  width: 100%;
+  max-height: 14rem;
+  /* height: 14rem; */
 }
 
 .swiper-wrapper {
@@ -766,4 +770,17 @@ select {
 
 .bgc-white {
   background-color: #fff;
+}
+
+#logout {
+  z-index: 9999;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.2rem;
+  color: #fff;
+  font-size: 0.6rem;
+  background-color: rgb(22, 155, 213);
+  border-radius: 0.1rem;
+  cursor: pointer;
 }

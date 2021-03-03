@@ -200,7 +200,15 @@ input {
     align-items: center;
 }
 
-#swiper-w4 .swiper-slide img {
+#swiper-w4 .swiper-slide img,#swiper-w4 .swiper-slide video {
     width: 13rem;
     height: 26rem;
+}
+
+.display-n {
+    display: none;
+}
+
+.display-b {
+    display: block;
 }

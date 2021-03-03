@@ -23,6 +23,25 @@
     }
 })();
 
+//检验是否登录
+(function() {
+    localStorage.getItem("username"), localStorage.getItem("password")
+    if(localStorage.getItem("username") && localStorage.getItem("username") != '' && localStorage.getItem("password") && localStorage.getItem("password") != '') {
+        //尝试登录
+    } else {
+        location.replace('login.html')
+    }
+})();
+
+//推出登录
+(function() {
+    $('#logout').on('click',function() {
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+        location.replace('login.html')
+    })
+})();
+
 (function () {
     //事件委托
     // $('.monitor').on('click', ' a', function () {
@@ -45,57 +64,7 @@
     });
 
 })();
-// (function () {
-//     var myechart = echarts.init($('.pie')[0]);
-//     option = {
-//         // 控制提示
-//         tooltip: {
-//             // 非轴图形，使用item的意思是放到数据对应图形上触发提示
-//             trigger: 'item',
-//             // 格式化提示内容：
-//             // a 代表图表名称 b 代表数据名称 c 代表数据  d代表  当前数据/总数据的比例
-//             formatter: "{a} <br/>{b} : {c} ({d}%)"
-//         },
-//         // 控制图表
-//         series: [
-//             {
-//                 // 图表名称
-//                 name: '地区',
-//                 // 图表类型
-//                 type: 'pie',
-//                 // 南丁格尔玫瑰图 有两个圆  内圆半径10%  外圆半径70%
-//                 // 百分比基于  图表DOM容器的半径
-//                 radius: ['10%', '70%'],
-//                 // 图表中心位置 left 50%  top 50% 距离图表DOM容器
-//                 center: ['50%', '50%'],
-//                 // 半径模式，另外一种是 area 面积模式
-//                 roseType: 'radius',
-//                 // 数据集 value 数据的值 name 数据的名称
-//                 data: [
-//                     { value: 20, name: '云南' },
-//                     { value: 5, name: '北京' },
-//                     { value: 15, name: '山东' },
-//                     { value: 25, name: '河北' },
-//                     { value: 20, name: '江苏' },
-//                     { value: 35, name: '浙江' },
-//                     { value: 30, name: '四川' },
-//                     { value: 40, name: '湖北' }
-//                 ],
-//                 //文字调整
-//                 label: {
-//                     fontSize: 10
-//                 },
-//                 //引导线
-//                 labelLine: {
-//                     length: 8,
-//                     length2: 10
-//                 }
-//             }
-//         ],
-//         color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff']
-//     };
-//     myechart.setOption(option);
-// })();
+
 // 用户
 
 //用户数据切换
@@ -232,22 +201,32 @@ function changeD() {
 
 //园区亮点展示
 (function () {
-    var mySwiper = new Swiper('#swiper1', {
-        autoplay: 3000, //可选选项，自动滑动
-        autoplayDisableOnInteraction: false,
-        // loop: true,
-        onSlideChangeStart: function (swiper) {
-            console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
-            $('#swiper-p1 p').removeClass('swiper-p1-act')
-            $('#swiper-p1 p').eq(swiper.activeIndex).addClass("swiper-p1-act")
-        },
-    })
+    // var mySwiper = new Swiper('#swiper1', {
+    //     autoplay: 3000, //可选选项，自动滑动
+    //     autoplayDisableOnInteraction: false,
+    //     // loop: true,
+    //     onSlideChangeStart: function (swiper) {
+    //         console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+    //         $('#swiper-p1 p').removeClass('swiper-p1-act')
+    //         $('#swiper-p1 p').eq(swiper.activeIndex).addClass("swiper-p1-act")
+    //     },
+    // })
+    // $("#swiper-p1").on("click", "p", function () {
+    //     let index = $(this).index();
+    //     console.log(index)
+    //     mySwiper.slideTo(index);
+    // })
+    let v1 = `<video id="video1" src="videos/movie.ogg" controls loop>
+                抱歉，您的浏览器不支持该视频！
+            </video>`
+    $("#swiper1 .swiper-slide").eq(0).append(v1)
     $("#swiper-p1").on("click", "p", function () {
         let index = $(this).index();
-        console.log(index)
-        mySwiper.slideTo(index);
+        console.log(index);
+        $("#video1").attr('src','videos/movie.ogg');
+        var myVideo = document.getElementById("video1");
+        myVideo.play();
     })
-
 })();
 
 //项目介绍
@@ -296,11 +275,11 @@ function changeD() {
         let tag = `<div class="img-tag" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
         if (index == 0) {
             tag = `<div class="img-tag choose-img" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
-            if(i.type == 1) {
+            if (i.type == 1) {
                 tag = `<div class="img-tag choose-img bgc-blue" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
             }
         } else {
-            if(i.type == 1) {
+            if (i.type == 1) {
                 tag = `<div class="img-tag bgc-blue" style='position: absolute; top: ${y}rem;left: ${x}rem'><span></span>${i.title}</div>`;
             }
         }
@@ -600,4 +579,56 @@ function changeD() {
 //         }
 //         $('.sup li').eq(index).mouseenter();
 //     }, 2000);
+// })();
+
+// (function () {
+//     var myechart = echarts.init($('.pie')[0]);
+//     option = {
+//         // 控制提示
+//         tooltip: {
+//             // 非轴图形，使用item的意思是放到数据对应图形上触发提示
+//             trigger: 'item',
+//             // 格式化提示内容：
+//             // a 代表图表名称 b 代表数据名称 c 代表数据  d代表  当前数据/总数据的比例
+//             formatter: "{a} <br/>{b} : {c} ({d}%)"
+//         },
+//         // 控制图表
+//         series: [
+//             {
+//                 // 图表名称
+//                 name: '地区',
+//                 // 图表类型
+//                 type: 'pie',
+//                 // 南丁格尔玫瑰图 有两个圆  内圆半径10%  外圆半径70%
+//                 // 百分比基于  图表DOM容器的半径
+//                 radius: ['10%', '70%'],
+//                 // 图表中心位置 left 50%  top 50% 距离图表DOM容器
+//                 center: ['50%', '50%'],
+//                 // 半径模式，另外一种是 area 面积模式
+//                 roseType: 'radius',
+//                 // 数据集 value 数据的值 name 数据的名称
+//                 data: [
+//                     { value: 20, name: '云南' },
+//                     { value: 5, name: '北京' },
+//                     { value: 15, name: '山东' },
+//                     { value: 25, name: '河北' },
+//                     { value: 20, name: '江苏' },
+//                     { value: 35, name: '浙江' },
+//                     { value: 30, name: '四川' },
+//                     { value: 40, name: '湖北' }
+//                 ],
+//                 //文字调整
+//                 label: {
+//                     fontSize: 10
+//                 },
+//                 //引导线
+//                 labelLine: {
+//                     length: 8,
+//                     length2: 10
+//                 }
+//             }
+//         ],
+//         color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff']
+//     };
+//     myechart.setOption(option);
 // })();

@@ -23,6 +23,25 @@
     }
 })();
 
+//检验是否登录
+(function() {
+    localStorage.getItem("username"), localStorage.getItem("password")
+    if(localStorage.getItem("username") && localStorage.getItem("username") != '' && localStorage.getItem("password") && localStorage.getItem("password") != '') {
+        //尝试登录
+    } else {
+        location.replace('login.html')
+    }
+})();
+
+//推出登录
+(function() {
+    $('#logout').on('click',function() {
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+        location.replace('login.html')
+    })
+})();
+
 //企业列表及切换
 (function () {
     let clist = ['润联行·时代', '润联行·西堤', '凤凰置地广场']
