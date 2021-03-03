@@ -33,7 +33,7 @@
     }
 })();
 
-//推出登录
+//退出登录
 (function() {
     $('#logout').on('click',function() {
         localStorage.removeItem('username');
