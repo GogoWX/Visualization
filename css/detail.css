@@ -43,6 +43,14 @@
     text-overflow: ellipsis;
 }
 
+.monitor .marquee2 .col:nth-child(2) {
+    width: 8rem;
+    /* 不换行  一行省略*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 .monitor .col:nth-child(3) {
     width: 5rem;
     overflow: hidden;
