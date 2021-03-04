@@ -42,6 +42,14 @@
     })
 })();
 
+//总数据
+(function() {
+    $('.overview h4').eq(0).text(33124)
+    $('.overview h4').eq(1).text(23754)
+    $('.overview h4').eq(2).text(134)
+    $('.overview h4').eq(3).text('40.8w')
+})();
+
 (function () {
     //事件委托
     // $('.monitor').on('click', ' a', function () {
