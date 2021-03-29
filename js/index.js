@@ -231,6 +231,8 @@ function changeD() {
     $("#swiper-p1").on("click", "p", function () {
         let index = $(this).index();
         console.log(index);
+        $('#swiper-p1 p').removeClass('swiper-p1-act')
+        $('#swiper-p1 p').eq(index).addClass("swiper-p1-act")
         $("#video1").attr('src','videos/movie.ogg');
         var myVideo = document.getElementById("video1");
         myVideo.play();
